@@ -1,3 +1,4 @@
+# Hamming distance calculation. 
 s = list('GAGCCTACTAACGGGAT')
 t = list('CATCGTAATGACGGCCT')
 hamm_dist = 0
