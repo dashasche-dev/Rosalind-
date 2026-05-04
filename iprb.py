@@ -1,0 +1,18 @@
+# Mendel's first law.
+k = int(input("Enter the number of homozygous dominant organisms: "))
+m = int(input("Enter the number of heterozygous organisms: "))   
+n = int(input("Enter the number of homozygous recessive organisms: "))
+p_first_is_k = k/(k+m+n)
+p_first_is_m = m/(k+m+n)
+p_first_is_n = n/(k+m+n)
+p_second_is_same_k = (k-1)/(k+m+n-1)
+p_second_is_same_m = (m-1)/(k+m+n-1)
+p_second_is_same_n = (n-1)/(k+m+n-1)
+p_second_different_from_first_k = k/(k+m+n-1)
+p_second_different_from_first_m = m/(k+m+n-1)
+p_second_different_from_first_n = n/(k+m+n-1)
+p_dom_first_is_k = p_first_is_k*(p_second_is_same_k +p_second_different_from_first_m + p_second_different_from_first_n)
+p_dom_first_is_m = p_first_is_m*(p_second_is_same_m*0.75 + p_second_different_from_first_n*0.5 + p_second_different_from_first_k)
+p_dom_first_is_n = p_first_is_n*(p_second_different_from_first_k + p_second_is_same_n*0 + p_second_different_from_first_m*0.5)
+p_dom = p_dom_first_is_k + p_dom_first_is_m + p_dom_first_is_n
+print(f"{p_dom:.5f}")
